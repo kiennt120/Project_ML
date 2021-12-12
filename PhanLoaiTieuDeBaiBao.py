@@ -10,8 +10,8 @@ from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 from sklearn.pipeline import Pipeline
 import pickle
 
-file = open(r'D:\20211\Introdution to ML and Data mining\Project\Preprocess data\stopword.txt', 'r', encoding='utf-8')
-df = pd.read_csv(r'D:\20211\Introdution to ML and Data mining\Project\Preprocess data\data.csv', names=['label', 'title'], encoding='utf-8')
+file = open(r'stopword.txt', 'r', encoding='utf-8')
+df = pd.read_csv(r'data.csv', names=['label', 'title'], encoding='utf-8')
 
 stopwords = []
 for line in file:
@@ -77,13 +77,25 @@ pipeline = Pipeline([
 ])
 
 pipeline.fit(msg_train, label_train)
+filename = open(r'model_MultiNB.sav', 'wb')
+pickle.dump(pipeline, filename)
+filename.close()
 
-# Save model
-filename = r'model.sav'
-pickle.dump(pipeline, open(filename, 'wb'))
+pipeline2 = Pipeline([
+    ('bow', CountVectorizer(analyzer=text_process)),
+    ('tfidf', TfidfTransformer()),
+    ('model', OneVsRestClassifier(SVC()))
+])
+pipeline2.fit(msg_train, label_train)
+filename2 = open(r'model_SVC.sav', 'wb')
+pickle.dump(pipeline2, filename2)
+filename2.close()
 
-# # Đánh giá model
+# Đánh giá model
 # predictions = pipeline.predict(msg_test)
+# predictions2 = pipeline2.predict(msg_test)
+#
+# print("Mô hình Muitinomial Naive Bayes: ")
 # print(classification_report(label_test, predictions))
-
-
+# print("Mô hình Support vector machine: ")
+# print(classification_report(label_test, predictions2))

@@ -1,5 +1,5 @@
-file1 = open(r'D:\20211\Introdution to ML and Data mining\Project\Preprocess data\Done.txt', 'r', encoding='utf-8')
-file2 = open(r'D:\20211\Introdution to ML and Data mining\Project\Preprocess data\data.csv', 'a', encoding='utf-8')
+file1 = open(r'Done.txt', 'r', encoding='utf-8')
+file2 = open(r'data.csv', 'a', encoding='utf-8')
 
 for index, line in enumerate(file1):
     if index <= 1163:
