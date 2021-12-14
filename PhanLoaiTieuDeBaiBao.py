@@ -13,18 +13,6 @@ from TextPreprocess import  text_process
 
 df = pd.read_csv(r'data.csv', names=['label', 'title'], encoding='utf-8')
 
-# file = open(r'stopword.txt', 'r', encoding='utf-8')
-# stopwords = []
-# for line in file:
-#     stopwords.append(line.replace("\n", ""))
-# file.close()
-#
-# punc = string.punctuation.replace("_", "").replace("/", "").replace("%", "") + '‘’'
-
-
-# print(df.groupby('label').describe())
-
-
 # # Split data
 # Lấy mẫu Stratified
 stratified = StratifiedShuffleSplit(test_size=0.3)
@@ -47,7 +35,6 @@ pipeline = Pipeline([
 
 pipeline.fit(msg_train, label_train)
 pickle.dump(pipeline, open(r'model_MultiNB.sav', 'wb'))
-print("Nhu buoi")
 
 pipeline2 = Pipeline([
     ('bow', CountVectorizer(analyzer=text_process)),
