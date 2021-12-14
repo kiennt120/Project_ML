@@ -9,49 +9,18 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split, StratifiedShuffleSplit
 from sklearn.pipeline import Pipeline
 import pickle
+from TextPreprocess import  text_process
 
-file = open(r'stopword.txt', 'r', encoding='utf-8')
 df = pd.read_csv(r'data.csv', names=['label', 'title'], encoding='utf-8')
 
-stopwords = []
-for line in file:
-    stopwords.append(line.replace("\n", ""))
-file.close()
+# file = open(r'stopword.txt', 'r', encoding='utf-8')
+# stopwords = []
+# for line in file:
+#     stopwords.append(line.replace("\n", ""))
+# file.close()
+#
+# punc = string.punctuation.replace("_", "").replace("/", "").replace("%", "") + '‘’'
 
-punc = string.punctuation.replace("_", "").replace("/", "").replace("%", "") + '‘’'
-
-def text_process(line):
-    a = line.split()
-    for i, x in enumerate(a):
-        for j in a[i]:
-            if j == '%':
-                a[i] = 'percents'
-                break
-    line = ' '.join(a)
-    str = word_tokenize(line, format="text").lower()
-    words = [char for char in str if char not in punc]
-    words = ''.join(words)
-    words = words.split()
-    n = len(words)
-    for i in range(n):
-        for j in words[i]:
-            if j == '/':
-                words[i] = 'days'
-                break
-        try:
-            float(words[i])
-            words[i] = 'numbers'
-        except:
-            continue
-    # Remove stop words
-
-    # words = ' '.join(words)
-    word = []
-    for w in words:
-        if w not in stopwords:
-            word.append(w)
-
-    return word
 
 # print(df.groupby('label').describe())
 
@@ -77,9 +46,8 @@ pipeline = Pipeline([
 ])
 
 pipeline.fit(msg_train, label_train)
-filename = open(r'model_MultiNB.sav', 'wb')
-pickle.dump(pipeline, filename)
-filename.close()
+pickle.dump(pipeline, open(r'model_MultiNB.sav', 'wb'))
+print("Nhu buoi")
 
 pipeline2 = Pipeline([
     ('bow', CountVectorizer(analyzer=text_process)),
@@ -92,10 +60,10 @@ pickle.dump(pipeline2, filename2)
 filename2.close()
 
 # Đánh giá model
-# predictions = pipeline.predict(msg_test)
-# predictions2 = pipeline2.predict(msg_test)
-#
-# print("Mô hình Muitinomial Naive Bayes: ")
-# print(classification_report(label_test, predictions))
-# print("Mô hình Support vector machine: ")
-# print(classification_report(label_test, predictions2))
+predictions = pipeline.predict(msg_test)
+predictions2 = pipeline2.predict(msg_test)
+
+print("Mô hình Muitinomial Naive Bayes: ")
+print(classification_report(label_test, predictions))
+print("Mô hình Support vector machine: ")
+print(classification_report(label_test, predictions2))

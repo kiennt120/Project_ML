@@ -1,9 +1,5 @@
 # Load model
-from PhanLoaiTieuDeBaiBao import text_process
 import pickle
-
-# dict = {[1]: 'Đời sống', [2]: 'Du lịch', [3]: 'Giải trí', [4]: 'Giáo dục', [5]: 'Khoa học',
-#         [6]: 'Kinh doanh', [7]: 'Pháp luật', [8]: 'Sức khỏe', [9]: 'Thể thao', [10]: 'Thời sự'}
 
 loaded_model = pickle.load(open(r'model_MultiNB.sav', 'rb'))
 n = input("Số tiêu đề muốn test: ")
