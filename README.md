@@ -28,3 +28,11 @@ Các bước xử lý bài toán Phân loại tiêu đề bài báo:
 Model SVC và MultinomialNB được lưu trong 2 file moel_...sav tương ứng
 
 File XuLyTiengViet.py không cần thiết
+
+### Thư viện được sử dụng:
+
+- Scikit-learn
+
+- Underthesea
+
+- Pandas
