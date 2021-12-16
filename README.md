@@ -37,3 +37,29 @@ File XuLyTiengViet.py không cần thiết
 - Underthesea
 
 - Pandas
+
+- Có thể thêm thư viện TensorFlow
+
+- Flask
+
+### Những bước còn phải làm:
+
+- Thêm unique data doisong, kinhdoanh, suckhoe, thoisu
+
+- Viết file jupyter (trực quan hóa data, chi tiết các bước, chi tiết các thuật toán)
+
+- Dùng các kĩ thuật: early stop...
+
+- Dùng thư viện TensorFlow
+
+- Làm web
+
+### Những điều cần note vào báo cáo:
+
+- So sánh tốc độ chạy giữa 2 thuật toán
+
+- Tốc độ và độ "chính xác" của model khi không dùng tf-idf và khi dùng, khi dùng random split và khi dùng stratified
+
+- Độ "chính xác" khi chênh lệch data, khi cân bằng, khi unique thấp...
+
+- Lý giải???
