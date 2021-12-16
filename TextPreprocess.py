@@ -1,7 +1,7 @@
 from underthesea import word_tokenize
 import string
 
-def stopw():
+def stop_word():
     file = open(r'stopword.txt', 'r', encoding='utf-8')
     stopwords = []
     for line in file:
@@ -12,7 +12,7 @@ def stopw():
     return stopwords, punc
 
 def text_process(line):
-    stopwords, punc = stopw()
+    stopwords, punc = stop_word()
     a = line.split()
     for i, x in enumerate(a):
         for j in a[i]:
@@ -35,12 +35,32 @@ def text_process(line):
             words[i] = 'numbers'
         except:
             continue
-    # Remove stop words
 
-    # words = ' '.join(words)
     word = []
     for w in words:
         if w not in stopwords:
             word.append(w)
 
     return word
+
+def predicts(res):
+    if res == [1]:
+        return 'Đời sống'
+    elif res == [2]:
+        return 'Du lịch'
+    elif res == [3]:
+        return 'Giải trí'
+    elif res == [4]:
+        return 'Giáo dục'
+    elif res == [5]:
+        return 'Khoa học'
+    elif res == [6]:
+        return 'Kinh doanh'
+    elif res == [7]:
+        return 'Pháp luật'
+    elif res == [8]:
+        return 'Sức khỏe'
+    elif res == [9]:
+        return 'Thể thao'
+    else:
+        return 'Thời sự'
