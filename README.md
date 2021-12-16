@@ -1,4 +1,4 @@
-# Bài tập lớn nhập môn học máy và khai phá dữ liệu
+# Bài tập lớn môn nhập môn học máy và khai phá dữ liệu
 
 Source chính là file PhanLoaiTieuDeBaiBao.py
 
@@ -8,7 +8,8 @@ Project sử dụng 2 model là Multinomial Naive Bayes và Support vector machi
 
 Model SVM (SVC) hiệu quả hơn với độ chính xác, precision and recall, f1 score đều cao hơn MultinomialNB
 
-Các bước xử lý bài toán Phân loại tiêu đề bài báo:
+### Các bước xử lý bài toán Phân loại tiêu đề bài báo:
+
 - Biểu diễn, mô tả dữ liệu (chưa xong)
 
 - Tiền xử lý dữ liệu: tách chữ, từ (sử dụng package underthesea); lower case; chuyển số -> numbers, ngày tháng -> days, phần trăm -> percents làm giảm feature; bỏ các kí tự không cần thiết; loại bỏ stop word.
