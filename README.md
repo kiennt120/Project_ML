@@ -38,7 +38,7 @@ File XuLyTiengViet.py không cần thiết
 
 - Pandas
 
-- Có thể thêm thư viện TensorFlow
+- Có thể bao gồm thư viện TensorFlow
 
 - Flask
 
@@ -46,11 +46,15 @@ File XuLyTiengViet.py không cần thiết
 
 - Thêm unique data doisong, kinhdoanh, suckhoe, thoisu
 
+- Lựa chọn tham số tối ưu: kernel, C... (dùng tqdm) => Vẽ biểu đồ với từng tham số
+
+- plot iteration
+
 - Viết file jupyter (trực quan hóa data, chi tiết các bước, chi tiết các thuật toán)
 
-- Dùng các kĩ thuật: early stop...
+- Dùng các kĩ thuật: early stop, hold out...
 
-- Dùng thư viện TensorFlow
+- Dùng thư viện TensorFlow (may be)
 
 - Làm web
 
