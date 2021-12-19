@@ -38,7 +38,7 @@ msg_test, label_test = strat_test_set['title'], strat_test_set['label']
 pipeline2 = Pipeline([
     ('bow', CountVectorizer(analyzer=text_process)),
     ('tfidf', TfidfTransformer()),
-    ('model', OneVsRestClassifier(SVC(kernel='rbf')))
+    ('model', SVC(kernel='rbf'))
 ])
 pipeline2.fit(msg_train, label_train)
 # filename2 = open(r'model_SVC.sav', 'wb')
