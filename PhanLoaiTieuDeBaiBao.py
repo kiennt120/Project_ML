@@ -38,7 +38,7 @@ msg_test, label_test = strat_test_set['title'], strat_test_set['label']
 pipeline2 = Pipeline([
     ('bow', CountVectorizer(analyzer=text_process)),
     ('tfidf', TfidfTransformer()),
-    ('model', SVC(kernel='rbf'))
+    ('model', SVC(kernel='rbf', C=2.0))
 ])
 pipeline2.fit(msg_train, label_train)
 # filename2 = open(r'model_SVC.sav', 'wb')
@@ -48,6 +48,8 @@ pipeline2.fit(msg_train, label_train)
 # Đánh giá model
 # predictions = pipeline.predict(msg_test)
 predictions2 = pipeline2.predict(msg_test)
+predict = pipeline2.predict_proba(msg_test)
+predict2 = pipeline2.predict_log_proba(msg_test)
 
 # print("Mô hình Muitinomial Naive Bayes: ")
 # print(classification_report(label_test, predictions))
