@@ -22,13 +22,11 @@ Model SVM (SVC) hiệu quả hơn với độ chính xác, precision and recall,
 
 - Model training
 
-- Model evaluation (chưa xong)
+- Model evaluation
 
 - Final
 
-Model SVC và MultinomialNB được lưu trong 2 file moel_...sav tương ứng
-
-File XuLyTiengViet.py không cần thiết
+Model SVC được lưu trong file moel_SVC.sav
 
 ### Thư viện được sử dụng:
 
@@ -38,9 +36,9 @@ File XuLyTiengViet.py không cần thiết
 
 - Pandas
 
-- Có thể bao gồm thư viện TensorFlow
+- Tqdm
 
-- Flask
+- Matplotlib
 
 ### Những bước còn phải làm:
 
@@ -48,15 +46,7 @@ File XuLyTiengViet.py không cần thiết
 
 - Lựa chọn tham số tối ưu: kernel, C... (dùng tqdm) => Vẽ biểu đồ với từng tham số
 
-- plot iteration
-
 - Viết file jupyter (trực quan hóa data, chi tiết các bước, chi tiết các thuật toán)
-
-- Dùng các kĩ thuật: early stop, hold out...
-
-- Dùng thư viện TensorFlow (may be)
-
-- Làm web
 
 ### Những điều cần note vào báo cáo:
 
