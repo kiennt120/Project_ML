@@ -42,11 +42,11 @@ Model SVC được lưu trong file moel_SVC.sav
 
 ### Những bước còn phải làm:
 
-- Thêm unique data doisong, kinhdoanh, suckhoe, thoisu
+- Thêm unique data doisong, kinhdoanh, suckhoe, thoisu (done)
 
-- Lựa chọn tham số tối ưu: kernel, C... (dùng tqdm) => Vẽ biểu đồ với từng tham số
+- Lựa chọn tham số tối ưu: kernel, C... (dùng tqdm) => Vẽ biểu đồ với từng tham số (done)
 
-- Viết file jupyter (trực quan hóa data, chi tiết các bước, chi tiết các thuật toán)
+- Viết file jupyter (trực quan hóa data, chi tiết các bước, chi tiết các thuật toán) (done)
 
 ### Những điều cần note vào báo cáo:
 
